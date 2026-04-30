@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="thied-page.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Product Detail</title>
+</head>
+<body>
+    <!-- Topbar -->
+<nav class="navbar navbar-expand-lg py-0">
+    <div class="container-fluid px-lg-5">
+      <a class="navbar-brand brand-logo" href="#">M<span style="color:red;">e</span>rto</a>
+      <div class="d-none d-lg-flex align-items-center ms-4">
+        <span class="me-2"><i class="bi bi-telephone"></i></span>
+        <span style="font-size: .97rem;">Contact us 24/7 <br> <b>(+92) 394 27879</b></span>
+      </div>
+      <form class="d-flex ms-4 flex-grow-1" style="max-width: 500px;">
+        <select class="form-select me-2" style="width:160px;">
+          <option>All Categories</option>
+          <option>Chairs</option>
+          <option>Cosmetics</option>
+        </select>
+        <input class="form-control me-2" type="search" placeholder="Search for products" aria-label="Search">
+        <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
+      </form>
+      <div class="d-flex align-items-center ms-auto">
+        <div class="me-4 d-flex align-items-center"><img src="https://flagsapi.com/US/flat/24.png" alt="us"> English</div>
+        <div class="me-3">USD <i class="bi bi-chevron-down"></i></div>
+        <a href="#" class="me-4 text-dark">Account</a>
+        <a href="#" class="me-2 position-relative"><i class="bi bi-heart"></i></a>
+        <a href="#" class="me-2 position-relative"><i class="bi bi-cart"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span></a>
+      </div>
+    </div>
+  </nav>
+  <!-- Subnav -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+      <button class="btn btn-link" id="toggleCategories">
+        <span class="bi bi-list">&#9776;</span>
+        SHOP BY CATEGORIES
+      </button>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="first-page.html">Homepages</a></li>
+        <li class="nav-item"><a class="nav-link" href="sec-page.html">Categories</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+        <li class="nav-item"><a class="nav-link" href="4-page.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Best Discount</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Recently viewed</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="categories-panel container-fluid" id="categoriesPanel">
+    <div class="row g-0">
+      <div class="col-md-3 left-menu">
+        <ul class="list-unstyled">
+          <li><span>👕</span> Fashion <span>&gt;</span></li>
+          <li><span>📱</span> Phone & Tablet <span>&gt;</span></li>
+          <li><span>💻</span> Laptop & Computer <span>&gt;</span></li>
+          <li><span>📺</span> TV, Audio – Video <span>&gt;</span></li>
+          <li><span>📷</span> Camera & Photo <span>&gt;</span></li>
+          <li><span>🛋️</span> Home & Decor <span>&gt;</span></li>
+          <li><span>💄</span> Beauty & Health <span>&gt;</span></li>
+          <li><span>🎮</span> Game Accessories <span>&gt;</span></li>
+          <li><span>⚙️</span> Autopart <span>&gt;</span></li>
+        </ul>
+      </div>
+      <div class="col-md-6 right-menu">
+        <div class="row">
+          <div class="col-md-6">
+            <h6>WOMEN</h6>
+            <ul>
+              <li>Accessories</li>
+              <li>Blazers</li>
+              <li>Coats & Jackets</li>
+              <li>Dress</li>
+              <li>Shirts</li>
+              <li>Shoes</li>
+              <li>Shorts</li>
+              <li>Skirts</li>
+              <li>Sweatshirts</li>
+              <li>Tops</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h6>MEN</h6>
+            <ul>
+              <li>Accessories</li>
+              <li>Cargo Trousers</li>
+              <li>Hoodies</li>
+              <li>Jackets & Coats</li>
+              <li>Jeans</li>
+              <li>Joggers</li>
+              <li>Polo shirts</li>
+              <li>Shirts</li>
+              <li>Shoes</li>
+              <li>Short</li>
+            </ul>
+          </div>
+        </div>
+        <div class="promo-card">
+          <p>New Collection</p>
+          <h5>Bobby Caro Dress</h5>
+          <button>SHOP NOW</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+        <li class="breadcrumb-item"><a href="#">Fashion</a></li>
+        <li class="breadcrumb-item"><a href="#">Women</a></li>
+        <li class="breadcrumb-item"><a href="#">Skirts</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Barbie Baseball Hat Cap Berkshire Fashions New</li>
+      </ol>
+    </nav>
+    <div class="row">
+      <div class="col-md-1 thumbs">
+        <img src="https://via.placeholder.com/200x200?text=1" onclick="changeImage(this)">
+        <img src="https://via.placeholder.com/200x200?text=2" onclick="changeImage(this)">
+        <img src="https://via.placeholder.com/200x200?text=3" onclick="changeImage(this)">
+        <img src="https://via.placeholder.com/200x200?text=4" onclick="changeImage(this)">
+      </div>
+      <div class="col-md-5">
+        <div class="main-img-container">
+          <img id="mainImage" class="main-img" src="https://via.placeholder.com/500x500?text=Main">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3 class="product-title">Barbie Baseball Hat Cap Berkshire Fashions New</h3>
+        <div class="mb-2 text-warning">★★★★★ <small class="text-muted">(0 Reviews)</small> <a href="#">Write a review</a></div>
+        <ul>
+          <li>Unique Design</li>
+          <li>Premium Material</li>
+          <li>Classic & Versatile</li>
+        </ul>
+        <p class="price">$12 <span class="badge bg-success">In stock</span></p>
+        <div class="input-group mb-3" style="max-width:140px;">
+          <button class="btn btn-outline-secondary" type="button" onclick="decQty()">-</button>
+          <input type="text" class="form-control text-center" id="qty" value="1">
+          <button class="btn btn-outline-secondary" type="button" onclick="incQty()">+</button>
+        </div>
+        <button class="btn btn-dark me-2">+ ADD TO CART</button>
+        <button class="btn btn-danger">BUY NOW</button>
+        <p class="mt-3"><a href="#">Add to wishlist</a> | <a href="#">Add to compare</a></p>
+        <p class="mt-3"><strong>SKU:</strong> KGVT48C82S</p>
+        <p><strong>Categories:</strong> Shorts, Skirts</p>
+        <div>
+          <a href="#" class="me-2">🔗</a>
+          <a href="#" class="me-2">📧</a>
+          <a href="#" class="me-2">📌</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <div class="alert alert-success d-flex justify-content-between align-items-center">
+      <div>
+        <strong>Earn Cash Back For The Things You Buy Every Where</strong><br>
+        <small>Application via Merto. <a href="#">Terms & Conditions</a></small>
+      </div>
+      <button class="btn btn-success">VIEW MORE</button>
+    </div>
+  
+    <!-- Tabs -->
+    <ul class="nav nav-tabs" id="productTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc" type="button" role="tab">Description</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="spec-tab" data-bs-toggle="tab" data-bs-target="#spec" type="button" role="tab">Specifications</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab">Reviews (0)</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="productTabContent">
+      <div class="tab-pane fade show active" id="desc" role="tabpanel">
+        <div class="row">
+          <div class="col-md-8">
+            <p>Compellingly grow performance based mindshare through parallel potentialities. Rapidiously underwhelm top-line catalysts for change before best-of-breed materials. Competently brand timely catalysts for change through sustainable systems. Completely expedite ubiquitous bandwidth after integrated action items. Progressively transform leading-edge supply chains whereas flexible niche markets.</p>
+          </div>
+          <div class="col-md-4">
+            <table class="w-100 info-table">
+              <tr><td><strong>Shipping</strong></td><td>We currently offer free shipping worldwide on all orders over $100.</td></tr>
+              <tr><td><strong>Sizing</strong></td><td>Fits true to size. Do you need size advice?</td></tr>
+              <tr><td><strong>Return & Exchange</strong></td><td>If you are not satisfied with your purchase you can return it to us within 14 days for an exchange or refund.</td></tr>
+              <tr><td><strong>Assistance</strong></td><td>Contact us on (+44) 555 88 65, or email us at support@themesky.com</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="spec" role="tabpanel">
+        <p>Specifications content goes here...</p>
+      </div>
+      <div class="tab-pane fade" id="review" role="tabpanel">
+        <p>No reviews yet. Be the first to review!</p>
+      </div>
+    </div>
+  
+    <h4 class="mt-5 mb-3">Related products</h4>
+    <div class="row related-products g-3">
+      <div class="col-md-3">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x200" alt="p1">
+          <p class="mt-2">Unbranded Unisex Hoodie Sarcastic Pullover - White<br><strong>$59</strong></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x200" alt="p2">
+          <p class="mt-2">Travel Cover Dry Backpack Allen Large Travel<br><strong>$64</strong></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x200" alt="p3">
+          <p class="mt-2">Nike Men's Benassi Solarsoft Slide Athletic Sandal<br><strong>$125</strong></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x200" alt="p4">
+          <p class="mt-2">Athletics Embroidered Relaxed Hoodies - Black<br><strong>$165</strong></p>
+        </div>
+      </div>
+      <div class="col-md-3 mt-3">
+        <div class="card">
+          <img src="https://via.placeholder.com/200x200" alt="p5">
+          <p class="mt-2">Tanga on T-Shirt for Men, Women Short Sleeve Tee<br><strong>$43</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="container-fluid">
+    <div class="row text-white">
+      <div class="col-md-3 mb-4">
+        <div class="footer-logo">M<span>e</span>rto</div>
+        <p class="mt-3 mb-1"><i class="bi bi-geo-alt"></i> 29 SE 2nd Ave, Miami Florida 33131, United States</p>
+        <p><i class="bi bi-envelope"></i> info@example.com</p>
+        <p><strong>(+92) 3942 7879</strong></p>
+      </div>
+      <div class="col-md-2 footer-links">
+        <h6>SHOPPING</h6>
+        <a href="#">Wishlist</a>
+        <a href="#">Shop by Brand</a>
+        <a href="#">Offers</a>
+        <a href="#">Track order</a>
+        <a href="#">Size Guide</a>
+      </div>
+      <div class="col-md-2 footer-links">
+        <h6>INFOMATION</h6>
+        <a href="#">Track Order</a>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">About us</a>
+        <a href="#">Help</a>
+        <a href="#">Gift Cards</a>
+      </div>
+      <div class="col-md-2 footer-links">
+        <h6>ACCOUNT</h6>
+        <a href="#">Cart</a>
+        <a href="#">My account</a>
+        <a href="#">My orders</a>
+        <a href="#">Wishlist</a>
+        <a href="#">Affiliate Program</a>
+      </div>
+      <div class="col-md-3">
+        <h6>Let's keep in touch</h6>
+        <div class="email-box">
+          <input type="email" placeholder="enter your email address">
+          <button>&rarr;</button>
+        </div>
+        <div class="social-icons">
+          <a href="#">f</a>
+          <a href="#">t</a>
+          <a href="#">x</a>
+          <a href="#">▶</a>
+          <a href="#">⧉</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row bottom-contact text-white mt-4">
+      <div class="col-md-4 mb-3">
+        <h6>📞 Didn't find what you were looking for?</h6>
+        <p>Contact Us</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h6>😊 How can we help you today?</h6>
+        <p>Help Center</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h6>🎧 We'd love to hear what you think!</h6>
+        <p>Give Feedback</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-3">
+      <p class="text-secondary mb-2">Copyright © Merto. All Rights Reserved</p>
+      <div class="payment-icons">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="paypal">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Apple-logo.svg" alt="applepay">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="mastercard">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" alt="amex">
+      </div>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('searchBtn').addEventListener('click', function(){
+    const value = document.getElementById('searchInput').value.trim();
+    if(value){
+      alert('Searching for: ' + value);
+    } else {
+      alert('Please enter a search term.');
+    }
+  });
+</script>
+  
+  
+  
+  
+  <script>
+    function changeImage(element){
+      document.getElementById('mainImage').src = element.src;
+    }
+    // Zoom effect with JavaScript on hover
+    const mainImg = document.getElementById('mainImage');
+    mainImg.addEventListener('mouseenter', ()=>{
+      mainImg.classList.add('zoomed');
+    });
+    mainImg.addEventListener('mouseleave', ()=>{
+      mainImg.classList.remove('zoomed');
+    });
+    function incQty(){
+      const qtyInput = document.getElementById('qty');
+      qtyInput.value = parseInt(qtyInput.value) + 1;
+    }
+    function decQty(){
+      const qtyInput = document.getElementById('qty');
+      if(parseInt(qtyInput.value) > 1){
+        qtyInput.value = parseInt(qtyInput.value) - 1;
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
