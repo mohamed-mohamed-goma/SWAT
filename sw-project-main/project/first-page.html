@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VI Ecommerce Homepage</title>
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="first-page.css">
  
@@ -31,7 +31,13 @@
       <div class="me-3">USD <i class="bi bi-chevron-down"></i></div>
       <a href="#" class="me-4 text-dark">Account</a>
       <a href="#" class="me-2 position-relative"><i class="bi bi-heart"></i></a>
-      <a href="#" class="me-2 position-relative"><i class="bi bi-cart"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span></a>
+      <a href="#" class="me-2 position-relative">
+  <i class="bi bi-cart"></i>
+  <span id="cartCounter"
+        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    0
+  </span>
+</a>
     </div>
   </div>
 </nav>
@@ -210,9 +216,9 @@
           <span class="badge-custom">HOT</span>
           <img src="C:\Users\moham\OneDrive\Desktop\project\imgs\Black hoodie for men.jpg" class="product-img" alt="Nike">
           <div class="overlay">
-            <button>Add to Cart</button>
-            <button>Wishlist</button>
-            <button>Compare</button>
+            <button><i class="bi bi-cart"></i></button>
+<button><i class="bi bi-heart"></i></button>
+<button><i class="bi bi-arrow-left-right"></i></button>
           </div>
           <div class="product-title">Black Hoodie</div>
           <div class="product-price">750eg</div>
@@ -222,9 +228,9 @@
         <div class="product-card">
           <img src="C:\Users\moham\OneDrive\Desktop\project\imgs\08ec7a27b3abbd116bcd6b9c8314a13e.jpg" class="product-img" alt="Skirt">
           <div class="overlay">
-            <button>Add to Cart</button>
-            <button>Wishlist</button>
-            <button>Compare</button>
+            <button><i class="bi bi-cart"></i></button>
+<button><i class="bi bi-heart"></i></button>
+<button><i class="bi bi-arrow-left-right"></i></button>
           </div>
           <div class="product-title">Black Jacket for winter</div>
           <div class="product-price">1,390eg</div>
@@ -235,9 +241,9 @@
           <span class="badge-custom">-40%</span>
           <img src="C:\Users\moham\OneDrive\Desktop\project\imgs\bfd2f37085718743d9c5020e9a8766cf.jpg" class="product-img" alt="Wheels">
           <div class="overlay">
-            <button>Add to Cart</button>
-            <button>Wishlist</button>
-            <button>Compare</button>
+            <button><i class="bi bi-cart"></i></button>
+<button><i class="bi bi-heart"></i></button>
+<button><i class="bi bi-arrow-left-right"></i></button>
           </div>
           <div class="product-title">Blue Hoodi from Eagle</div>
           <div class="product-price">510eg <del>850eg</del></div>
@@ -248,9 +254,10 @@
           <span class="badge-custom">-20%</span>
           <img src="C:\Users\moham\OneDrive\Desktop\project\imgs\DAZY 1pc Men Plain Black Faux Leather Jacket For Autumn, Grunge.jpg" class="product-img" alt="Trolley">
           <div class="overlay">
-            <button>Add to Cart</button>
-            <button>Wishlist</button>
-            <button>Compare</button>
+            <span id="cartCounter" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
+            <button><i class="bi bi-cart"></i></button>
+<button><i class="bi bi-heart"></i></button>
+<button><i class="bi bi-arrow-left-right"></i></button>
           </div>
           <div class="product-title">DAZY 1pc Men Plain Black Faux Leather Jacket For Autumn, Grunge</div>
           <div class="product-price">1000eg <del>1,250eg</del></div>
@@ -355,119 +362,172 @@
   </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  document.getElementById('searchBtn').addEventListener('click', function(){
-    const value = document.getElementById('searchInput').value.trim();
+
+/* ================= STATE ================= */
+let cart = parseInt(localStorage.getItem("cart")) || 0;
+
+/* ================= UPDATE UI ================= */
+function updateCartUI() {
+  const counter = document.getElementById("cartCounter");
+  if (counter) {
+    counter.innerText = cart;
+
+    // animation
+    counter.style.transform = "scale(1.3)";
+    setTimeout(() => {
+      counter.style.transform = "scale(1)";
+    }, 200);
+  }
+}
+
+/* ================= ADD TO CART ================= */
+function setupCartButtons() {
+  document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
+    btn.addEventListener("click", function(e) {
+      e.stopPropagation();
+
+      cart++;
+      localStorage.setItem("cart", cart);
+      updateCartUI();
+    });
+  });
+}
+
+/* ================= INIT ================= */
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartUI();
+  setupCartButtons();
+});
+</script>
+      <script>
+/* =====================
+   SEARCH FUNCTION
+===================== */
+const searchBtn = document.getElementById('searchBtn');
+if(searchBtn){
+  searchBtn.addEventListener('click', function(){
+    const input = document.getElementById('searchInput');
+    const value = input.value.trim();
+
     if(value){
       alert('Searching for: ' + value);
     } else {
       alert('Please enter a search term.');
     }
   });
-</script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-
-
-  <script>
-    const toggleBtn = document.getElementById('toggleCategories');
-    const panel = document.getElementById('categoriesPanel');
-    toggleBtn.addEventListener('click', () => {
-      panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
-    });
-  </script>
-  <script>
-    const images = [
-      "C:\Users\Gom3a\Downloads\demo.theme-sky.com\banner5-demo1.jpg", // Gray
-      "C:\Users\Gom3a\Downloads\demo.theme-sky.com\banner5-mobile-demo1.jpg", // Black
-      "C:\Users\Gom3a\Downloads\demo.theme-sky.com\banner1-mobile-demo1.jpg", // Beige
-      "C:\Users\Gom3a\Downloads\demo.theme-sky.com\banner1-mobile-demo1.jpg"  // Navy
-    ];
-    let current = 0;
-    function setImage(idx) {
-      document.getElementById('mainHoodieImg').src = images[idx];
-      current = idx;
-      document.querySelectorAll('.product-thumb').forEach((el,i) => {
-        el.classList.toggle('selected', i === idx);
-      });
-    }
-    function prevImage() {
-      current = (current - 1 + images.length) % images.length;
-      setImage(current);
-    }
-    function nextImage() {
-      current = (current + 1) % images.length;
-      setImage(current);
-    }
-    // For accessibility: set initial image
-    setImage(0);
-  </script>
-
-  <script>
-    // Drag to scroll (mouse and touch support)
-    
-    catScroll.addEventListener('mousedown', (e) => {
-      isDown = true;
-      startX = e.pageX - catScroll.offsetLeft;
-      scrollLeft = catScroll.scrollLeft;
-      catScroll.style.cursor = 'grabbing';
-    });
-    catScroll.addEventListener('mouseleave', () => {
-      isDown = false;
-      catScroll.style.cursor = 'grab';
-    });
-    catScroll.addEventListener('mouseup', () => {
-      isDown = false;
-      catScroll.style.cursor = 'grab';
-    });
-    catScroll.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - catScroll.offsetLeft;
-      const walk = (x - startX) * 1.3; // adjust for sensitivity
-      catScroll.scrollLeft = scrollLeft - walk;
-    });
-    // Touch support
-    catScroll.addEventListener('touchstart', (e) => {
-      isDown = true;
-      startX = e.touches[0].pageX - catScroll.offsetLeft;
-      scrollLeft = catScroll.scrollLeft;
-    });
-    catScroll.addEventListener('touchend', () => {
-      isDown = false;
-    });
-    catScroll.addEventListener('touchmove', (e) => {
-      if (!isDown) return;
-      const x = e.touches[0].pageX - catScroll.offsetLeft;
-      const walk = (x - startX) * 1.3;
-      catScroll.scrollLeft = scrollLeft - walk;
-    });
-    
-    // Card hover to add 'cat-active' class
-    const catCards = document.querySelectorAll('.cat-card');
-    catCards.forEach((card) => {
-      card.addEventListener('mouseenter', function() {
-        catCards.forEach(c=>c.classList.remove('cat-active'));
-        card.classList.add('cat-active');
-      });
-    });
-     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-
-
-function addToCart(){
-    cart++;
-    let counter = document.getElementById("cartCounter");
-    counter.innerText = cart;
-    counter.style.transform="scale(1.3)";
-    setTimeout(()=>{
-        counter.style.transform="scale(1)";
-    },200);
 }
-</script>
 
-    </script>
-   
+/* =====================
+   TOGGLE PANEL
+===================== */
+const toggleBtn = document.getElementById('toggleCategories');
+const panel = document.getElementById('categoriesPanel');
+
+if(toggleBtn && panel){
+  toggleBtn.addEventListener('click', () => {
+    panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
+  });
+}
+
+/* =====================
+   IMAGE SLIDER
+===================== */
+const images = [
+  "images/banner1.jpg",
+  "images/banner2.jpg",
+  "images/banner3.jpg"
+];
+
+let current = 0;
+
+function setImage(idx) {
+  const mainImg = document.getElementById('mainHoodieImg');
+  if(!mainImg) return;
+
+  mainImg.src = images[idx];
+  current = idx;
+
+  document.querySelectorAll('.product-thumb').forEach((el,i) => {
+    el.classList.toggle('selected', i === idx);
+  });
+}
+
+function prevImage() {
+  current = (current - 1 + images.length) % images.length;
+  setImage(current);
+}
+
+function nextImage() {
+  current = (current + 1) % images.length;
+  setImage(current);
+}
+
+/* =====================
+   CATEGORY SCROLL
+===================== */
+const catScroll = document.getElementById("categoryScroll");
+
+if(catScroll){
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  catScroll.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - catScroll.offsetLeft;
+    scrollLeft = catScroll.scrollLeft;
+    catScroll.style.cursor = 'grabbing';
+  });
+
+  catScroll.addEventListener('mouseleave', () => {
+    isDown = false;
+    catScroll.style.cursor = 'grab';
+  });
+
+  catScroll.addEventListener('mouseup', () => {
+    isDown = false;
+    catScroll.style.cursor = 'grab';
+  });
+
+  catScroll.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - catScroll.offsetLeft;
+    const walk = (x - startX) * 1.3;
+    catScroll.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch
+  catScroll.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].pageX - catScroll.offsetLeft;
+    scrollLeft = catScroll.scrollLeft;
+  });
+
+  catScroll.addEventListener('touchend', () => {
+    isDown = false;
+  });
+
+  catScroll.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    const x = e.touches[0].pageX - catScroll.offsetLeft;
+    const walk = (x - startX) * 1.3;
+    catScroll.scrollLeft = scrollLeft - walk;
+  });
+}
+
+/* =====================
+   CATEGORY HOVER
+===================== */
+const catCards = document.querySelectorAll('.cat-card');
+
+catCards.forEach((card) => {
+  card.addEventListener('mouseenter', function() {
+    catCards.forEach(c => c.classList.remove('cat-active'));
+    card.classList.add('cat-active');
+  });
+});
+</script>
         
     
   
